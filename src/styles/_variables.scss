@@ -1,0 +1,61 @@
+/* roboto-regular - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+  url('../fonts/roboto/roboto-v29-latin_cyrillic-ext-regular.woff2') format('woff2');
+}
+/* roboto-500 - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+  url('../fonts/roboto/roboto-v29-latin_cyrillic-ext-500.woff2') format('woff2');
+}
+/* montserrat-600 - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+  url('../fonts/montserrat/montserrat-v23-latin_cyrillic-ext-600.woff2') format('woff2');
+}
+
+
+$font-family-primary: Roboto,sans-serif;
+$font-family-secondary: Montserrat,sans-serif;
+$font-weight-md-regular: 400;
+$font-weight-lg: 500;
+$font-weight-xl: 600;
+$font-size-xs: 11px;
+$font-size-sm: 12px;
+$font-size-md-frequently: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 20px;
+$line-height-sm: 16px;
+$line-height-md-frequently: 20px;
+$line-height-lg: 24px;
+$line-height-xl: 28px;
+$letter-spacing-lg: .03em;
+
+$primary-color: #3B5172;
+$main-blue-color: #0762C8;
+$main-blue-color-hover: #064EA0;
+$main-green-color: #43B02A;
+$main-green-color-hover: #368D22;
+$red: #FF4E3D;
+$white: #fff;
+$main-gray: #9DACBF;
+$background-color: #f4f6fe;
+
+
+
+@mixin transition-all {
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}

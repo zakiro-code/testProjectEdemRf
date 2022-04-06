@@ -1,0 +1,16 @@
+@import '../../../styles/variables';
+
+.bubble {
+  background-color: $red;
+  border-radius: 10px;
+  font-size: $font-size-xs;
+  color: $white;
+  padding: 2px 4px 0px;
+  line-height: $line-height-sm;
+  min-width: 18px;
+  position: absolute;
+  z-index: 1;
+  right: -10px;
+  top: -8px;
+  justify-content: center;
+}

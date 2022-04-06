@@ -1,17 +1,40 @@
+@import-normalize;
+@import 'variables';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-size: $font-size-md-frequently;
+    font-weight: $font-weight-md-regular;
+    font-family: $font-family-primary;
+    color: $primary-color;
+    line-height: $line-height-md-frequently;
+    background-color: $background-color;
+}
+
 #root {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100%;
+    overflow: hidden;
 }
 
 .App {
-    width: 800px;
+
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+svg {
+    fill: $main-gray;
 }
 
 .post {

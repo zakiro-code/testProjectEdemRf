@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+
+.find {
+  @include transition-all;
+  color: $main-green-color;
+  &:hover {
+    color: $main-green-color-hover;
+    svg {
+      fill: $main-green-color-hover;
+    }
+  }
+  svg {
+    fill: $main-green-color;
+  }
+}
+
+.create {
+  @include transition-all;
+  color: $main-blue-color;
+  &:hover {
+    color: $main-blue-color-hover;
+    svg {
+      fill: $main-blue-color-hover;
+    }
+  }
+  svg {
+    fill: $main-blue-color;
+  }
+}
+
+.wrapper {
+  margin: 0 15px;
+}
+
+.name {
+  font-weight: $font-weight-lg;
+  letter-spacing: $letter-spacing-lg;
+  margin-left: 8px;
+  text-transform: uppercase;
+}

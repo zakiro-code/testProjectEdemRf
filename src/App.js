@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import './styles/App.css';
+import './styles/App.scss';
 import About from "./pages/About";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Posts from "./pages/Posts";
-import Navbar from "./Components/UI/Navbar/Navbar";
+import Navbar from "./Components/UI/Navbar";
 import Error from "./pages/Error";
 import AppRouter from "./Components/AppRouter";
 import {AuthContext} from "./context/context";
