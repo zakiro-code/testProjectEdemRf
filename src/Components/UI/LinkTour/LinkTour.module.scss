@@ -29,12 +29,17 @@
 }
 
 .wrapper {
-  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper *{
+  display: flex;
+  align-items: center;
 }
 
 .name {
   font-weight: $font-weight-lg;
   letter-spacing: $letter-spacing-lg;
   margin-left: 8px;
-  text-transform: uppercase;
 }

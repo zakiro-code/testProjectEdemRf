@@ -4,12 +4,7 @@
   width: 100%;
   background-color: #fff;
   > div {
-    display: flex;
-    max-width: 1200px;
     margin: 28px auto;
-    padding: 0;
-    align-items: center;
-    justify-content: space-between;
     * {
       display: flex;
       align-items: center;
@@ -24,6 +19,13 @@
   margin-left: 16px;
   vertical-align: middle;
   max-width: 137px;
+}
+
+.tour {
+  text-transform: uppercase;
+  a {
+    margin: 0 15px;
+  }
 }
 
 .auth_box > *:not(:first-child) {

@@ -48,9 +48,8 @@ $main-green-color-hover: #368D22;
 $red: #FF4E3D;
 $white: #fff;
 $main-gray: #9DACBF;
+$gray-secondary: #72808D;
 $background-color: #f4f6fe;
-
-
 
 @mixin transition-all {
   -webkit-transition: .3s;
@@ -59,3 +58,5 @@ $background-color: #f4f6fe;
   -o-transition: .3s;
   transition: .3s;
 }
+
+$border-radius: 30px;

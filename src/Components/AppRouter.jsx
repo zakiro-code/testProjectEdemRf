@@ -7,6 +7,7 @@ import PostIdPage from "../pages/PostIdPage";
 import {privateRoutes, publicRoutes} from "../routes/routes";
 import Login from "../pages/Login";
 import {AuthContext} from "../context/context";
+import Tours from "../pages/Tours";
 
 const AppRouter = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -22,7 +23,7 @@ const AppRouter = () => {
                     />
                 )}
 
-                <Route path="/" element={<Posts />} />
+                <Route path="/" element={<Tours />} />
                 <Route path="*" element={<Error />} />
             </Routes>
         :

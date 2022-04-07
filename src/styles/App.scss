@@ -14,6 +14,7 @@ body {
     color: $primary-color;
     line-height: $line-height-md-frequently;
     background-color: $background-color;
+    height: 100vh;
 }
 
 #root {
@@ -21,20 +22,51 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100%;
-    overflow: hidden;
+    height: 100vh;
+    justify-content: space-between;
 }
 
-.App {
+main {
+    margin: 96px 0 0;
+    padding: 24px;
+    width: 1200px;
+    max-width: 100%;
+    .container {
+        flex-direction: column;
+    }
+    display: flex;
+    justify-content: center;
+}
 
+.container {
+    display: flex;
+    width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
 }
 
 a {
     color: $primary-color;
     text-decoration: none;
+    cursor: pointer;
 }
-
+button {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
 svg {
     fill: $main-gray;
+}
+path {
+    @include transition-all;
 }
 
 .post {

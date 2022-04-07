@@ -7,9 +7,10 @@ import Navbar from "./Components/UI/Navbar";
 import Error from "./pages/Error";
 import AppRouter from "./Components/AppRouter";
 import {AuthContext} from "./context/context";
+import Footer from "./Components/UI/Footer";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(true);
 
   useEffect(() => {
       if (localStorage.getItem('isAuth')) {
@@ -27,6 +28,7 @@ function App() {
           <BrowserRouter>
               <Navbar />
               <AppRouter />
+              <Footer />
           </BrowserRouter>
       </AuthContext.Provider>
   );

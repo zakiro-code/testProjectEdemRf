@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+
+.myBtn {
+    border-radius: $border-radius;
+    padding: 12px 32px;
+    color: white;
+    font-size: $font-size-lg;
+    min-width: 140px;
+    min-height: 48px;
+}
