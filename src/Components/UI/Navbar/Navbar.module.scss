@@ -3,7 +3,7 @@
   position: fixed;
   width: 100%;
   background-color: #fff;
-  > div {
+  > div:first-child {
     margin: 28px auto;
     * {
       display: flex;

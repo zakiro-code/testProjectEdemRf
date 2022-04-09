@@ -54,7 +54,7 @@ function Tours() {
         <main>
             <div className="container">
                 <CreateOrFindTours purpose="createToursModule"/>
-                <CreateOrFindTours purpose="findToursModule"/>
+                <CreateOrFindTours purpose="findToursModule" />
             </div>
 {/*            <MyButton style={{marginTop: 30}} onClick={() => setModal(true)}>
                 Create new user
@@ -65,11 +65,11 @@ function Tours() {
             {postError && <h1>{postError}</h1>}
             <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'Posts JS'}/>
             {isPostLoading && <div style={{display: 'flex', justifyContent: 'center', marginTop: 50 }}><Loader/></div>}
-            */}
 
 
 
-            {/*<LinkTour link="/" purposeThisButton="findTour"/>*/}
+
+            <LinkTour link="/" purposeThisButton="findTour"/>*/}
         </main>
     );
 }

@@ -1,22 +1,53 @@
-.myModal {
+@import "src/styles/variables";
+
+.MyModal {
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     display: none;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.myModalContent {
-    padding: 25px;
-    background: white;
-    border-radius: 16px;
-    min-width: 250px;
-}
-
-.myModal.active {
-    display: flex;
+    background: #3B517280;
+    z-index: 2;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 12px 32px rgba(38, 50, 56, 0.2);
+    .myModalContent {
+        display: flex;
+        padding: 16px 24px 24px;
+        background: $white;
+        border-radius: 10px;
+        min-width: 250px;
+        flex-direction: column;
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+        span {
+            font-family: $font-family-secondary;
+            font-weight: $font-weight-xl;
+            font-size: $font-size-xl;
+            line-height: $line-height-xl;
+        }
+        span:nth-child(2) {
+            cursor: pointer;
+            &:hover path {
+                fill: $primary-color;
+            }
+        }
+
+
+
+        button {
+            background-color: #0762C8;
+            transition: .3s;
+            &:hover {
+                background-color: $main-blue-color-hover;
+            }
+        }
+    }
+}
+
+.active {
+    display: flex;
 }

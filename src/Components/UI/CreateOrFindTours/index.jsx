@@ -1,13 +1,39 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import LinkTour from "../LinkTour";
 import MyButton from "../button/MyButton";
 import classes from "./CreateOrFindTours.module.scss";
+import {CreateTourModalShowContext, FindTourModalShowContext} from "../../../context/context";
+import MyModal from "../MyModal/MyModal";
 
 const CreateOrFindTours = (props) => {
+
+
+    const {isShowModalCreateTour, setIsShowModalCreateTour} = useContext(CreateTourModalShowContext);
+    const showHideModalCreateFunc = (e) => {
+        if(isShowModalCreateTour) {
+            setIsShowModalCreateTour(false);
+        } else {
+            setIsShowModalCreateTour(true);
+        }
+        e.preventDefault()
+    }
+
+    const {isShowModalFindTour, setIsShowModalFindTour} = useContext(FindTourModalShowContext);
+    const showHideModalFindFunc = (e) => {
+        if(isShowModalFindTour) {
+            setIsShowModalFindTour(false);
+        } else {
+            setIsShowModalFindTour(true);
+        }
+        e.preventDefault()
+    }
+
+
+
     return (
         props.purpose === "createToursModule"
         ?
-        <a href="/" className={classes.hyperlink} onClick={e => e.preventDefault()}>
+        <a href="/" className={classes.hyperlink} onClick={showHideModalCreateFunc}>
             <div className="wrapper">
                 <span>
                     <LinkTour link="/" purposeThisButton="createTour"/>
@@ -21,7 +47,7 @@ const CreateOrFindTours = (props) => {
             </div>
         </a>
         :
-        <a href="/" className={classes.hyperlink} onClick={e => e.preventDefault()}>
+        <a href="/" className={classes.hyperlink} onClick={showHideModalFindFunc}>
             <div className="wrapper">
                 <span>
                     <LinkTour link="/" purposeThisButton="findTour"/>

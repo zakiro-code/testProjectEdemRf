@@ -10,7 +10,6 @@
 
 .buttonFind button {
   background-color: $main-green-color;
-  @include transition-all;
   &:hover {
     background-color: $main-green-color-hover;
   }

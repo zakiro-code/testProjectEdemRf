@@ -1,11 +1,12 @@
 import React, {useContext, useState} from 'react';
 import {Link} from "react-router-dom";
 import MyButton from "../button/MyButton";
-import {AuthContext} from "../../../context/context";
 import LinkTour from "../LinkTour";
 import NoticeCounter from "../Notice-counter";
 import styles from './Navbar.module.scss';
 import { useNavigate } from 'react-router-dom';
+import MyModal from "../MyModal/MyModal";
+import {CreateTourModalShowContext, FindTourModalShowContext} from "../../../context/context";
 
 const Navbar = () => {
     const router = useNavigate();
@@ -26,7 +27,8 @@ const Navbar = () => {
         }
     };
 
-
+    const {isShowModalCreateTour, setIsShowModalCreateTour} = useContext(CreateTourModalShowContext);
+    const {isShowModalFindTour, setIsShowModalFindTour} = useContext(FindTourModalShowContext);
 
     return (
         <header className={styles.header}>
@@ -49,7 +51,7 @@ const Navbar = () => {
                 </div>
                 <div className={styles.tour}>
                     <LinkTour link="/" purposeThisButton="findTour"/>
-                    <LinkTour link="/" purposeThisButton="createTour"/>
+                    <LinkTour link="/" purposeThisButton="createTour" />
                 </div>
                 <div className={styles.auth_box}>
                     <div>
@@ -83,6 +85,25 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+
+            <MyModal visible={isShowModalCreateTour} setVisible={setIsShowModalCreateTour}>
+                <div>
+                    <span>Создать</span>
+                    <span onClick={() => setIsShowModalCreateTour(false)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                            <path d="M12.7247 0.709971C12.3666 0.319971 11.788 0.319971 11.4298 0.709971L6.93901 5.58997L2.44819 0.699971C2.09003 0.309971 1.51146 0.309971 1.1533 0.699971C0.795133 1.08997 0.795133 1.71997 1.1533 2.10997L5.64411 6.99997L1.1533 11.89C0.795133 12.28 0.795133 12.91 1.1533 13.3C1.51146 13.69 2.09003 13.69 2.44819 13.3L6.93901 8.40997L11.4298 13.3C11.788 13.69 12.3666 13.69 12.7247 13.3C13.0829 12.91 13.0829 12.28 12.7247 11.89L8.23391 6.99997L12.7247 2.10997C13.0737 1.72997 13.0737 1.08997 12.7247 0.709971Z" fill="#9DACBF"/>
+                        </svg>
+                    </span>
+                </div>
+                <input type="text" placeholder="Дата выезда"/>
+                <input type="text" placeholder="Дата прибытия"/>
+                <MyButton>
+                    Создать
+                </MyButton>
+            </MyModal>
+            <MyModal visible={isShowModalFindTour} setVisible={setIsShowModalFindTour}>
+                <h1>Найти</h1>
+            </MyModal>
         </header>
     );
 };
