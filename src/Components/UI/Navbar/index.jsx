@@ -7,6 +7,15 @@ import styles from './Navbar.module.scss';
 import { useNavigate } from 'react-router-dom';
 import MyModal from "../MyModal/MyModal";
 import {CreateTourModalShowContext, FindTourModalShowContext} from "../../../context/context";
+/*datepicker imports*/
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import './DataPickerMyStyles.scss';
+
+import { registerLocale, setDefaultLocale } from  "react-datepicker";
+import ru from 'date-fns/locale/ru';
+registerLocale('ru', ru)
+/*datepicker imports*/
 
 const Navbar = () => {
     const router = useNavigate();
@@ -29,6 +38,9 @@ const Navbar = () => {
 
     const {isShowModalCreateTour, setIsShowModalCreateTour} = useContext(CreateTourModalShowContext);
     const {isShowModalFindTour, setIsShowModalFindTour} = useContext(FindTourModalShowContext);
+
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
 
     return (
         <header className={styles.header}>
@@ -86,6 +98,8 @@ const Navbar = () => {
                 </div>
             </div>
 
+
+
             <MyModal visible={isShowModalCreateTour} setVisible={setIsShowModalCreateTour}>
                 <div>
                     <span>Создать</span>
@@ -95,14 +109,61 @@ const Navbar = () => {
                         </svg>
                     </span>
                 </div>
-                <input type="text" placeholder="Дата выезда"/>
-                <input type="text" placeholder="Дата прибытия"/>
+                <DatePicker
+                    locale="ru"
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    isClearable
+                    placeholderText="Дата выезда"
+                    minDate={new Date()}
+                />
+                {/*<div className="form-placeholder">Дата выезда</div>*/}
+                <DatePicker
+                    locale="ru"
+                    selected={endDate}
+                    onChange={(date) => setEndDate(date)}
+                    isClearable
+                    placeholderText="Дата прибытия"
+                    minDate={new Date()}
+                />
+                {/*<div className="form-placeholder">Дата прибытия</div>*/}
                 <MyButton>
                     Создать
                 </MyButton>
             </MyModal>
+
+
+
             <MyModal visible={isShowModalFindTour} setVisible={setIsShowModalFindTour}>
-                <h1>Найти</h1>
+                <div>
+                    <span>Найти</span>
+                    <span onClick={() => setIsShowModalFindTour(false)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                            <path d="M12.7247 0.709971C12.3666 0.319971 11.788 0.319971 11.4298 0.709971L6.93901 5.58997L2.44819 0.699971C2.09003 0.309971 1.51146 0.309971 1.1533 0.699971C0.795133 1.08997 0.795133 1.71997 1.1533 2.10997L5.64411 6.99997L1.1533 11.89C0.795133 12.28 0.795133 12.91 1.1533 13.3C1.51146 13.69 2.09003 13.69 2.44819 13.3L6.93901 8.40997L11.4298 13.3C11.788 13.69 12.3666 13.69 12.7247 13.3C13.0829 12.91 13.0829 12.28 12.7247 11.89L8.23391 6.99997L12.7247 2.10997C13.0737 1.72997 13.0737 1.08997 12.7247 0.709971Z" fill="#9DACBF"/>
+                        </svg>
+                    </span>
+                </div>
+                <DatePicker
+                    locale="ru"
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    isClearable
+                    placeholderText="Дата выезда"
+                    minDate={new Date()}
+                />
+                {/*<div className="form-placeholder">Дата выезда</div>*/}
+                <DatePicker
+                    locale="ru"
+                    selected={endDate}
+                    onChange={(date) => setEndDate(date)}
+                    isClearable
+                    placeholderText="Дата прибытия"
+                    minDate={new Date()}
+                />
+                <input type="text" placeholder="Комментарий"/>
+                <MyButton>
+                    Найти
+                </MyButton>
             </MyModal>
         </header>
     );

@@ -19,9 +19,13 @@
         border-radius: 10px;
         min-width: 250px;
         flex-direction: column;
-        div {
+        width: 360px;
+        max-width: 100%;
+        margin: 16px;
+        > div:first-child {
             display: flex;
             justify-content: space-between;
+            margin: 0 0 16px;
         }
         span {
             font-family: $font-family-secondary;
@@ -38,11 +42,26 @@
 
 
 
-        button {
+        > button {
             background-color: #0762C8;
             transition: .3s;
+            margin: 16px 0 0;
             &:hover {
                 background-color: $main-blue-color-hover;
+            }
+        }
+        input {
+            width: 100%;
+            border-radius: 24px;
+            font-size: $font-size-lg;
+            padding: 12px 24px;
+            margin: 8px 0;
+            border: 1px solid #83B0E3;
+            color: $main-gray;
+            &:hover, &:focus, &:focus-visible {
+                @include transition-all;
+                border: 1px solid $main-blue-color-hover;
+                outline: none;
             }
         }
     }
